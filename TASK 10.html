@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Layout Replication</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f2f2f2;
+      padding: 40px;
+      color: #333;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    /* Layout 1 */
+    .layout1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 60px;
+    }
+
+    .layout1 .left img {
+      height: 260px;
+      object-fit: cover;
+      border-radius: 12px;
+      clip-path: inset(0 50% 0 0); /* show only left half of face */
+    }
+
+    .layout1 .right {
+      width: 200px;
+      height: 200px;
+      background-color: #00BFFF;
+      border-radius: 12px;
+    }
+
+    /* Layout 2 */
+    .layout2 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .layout2 .image-box {
+      background-color: #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 160px;
+    }
+
+    .layout2 .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .layout2 .image-box:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>1. Half Face Layout</h2>
+  <div class="layout1">
+    <div class="left">
+      <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80" alt="Profile Face">
+    </div>
+    <div class="right"></div>
+  </div>
+
+  <h2>2. 8-Image Grid Layout</h2>
+  <div class="layout2">
+    <div class="image-box"><img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=400&h=300&fit=crop" alt="1"></div>
+    <div class="image-box"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=300&fit=crop" alt="2"></div>
+    <div class="image-box"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=300&fit=crop" alt="3"></div>
+    <div class="image-box"><img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=400&h=300&fit=crop" alt="4"></div>
+    <div class="image-box"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="5"></div>
+    <div class="image-box"><img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=300&fit=crop" alt="6"></div>
+    <div class="image-box"><img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?w=400&h=300&fit=crop" alt="7"></div>
+    <div class="image-box"><img src="https://images.unsplash.com/photo-1581291519195-ef11498d1cf5?w=400&h=300&fit=crop" alt="8"></div>
+  </div>
+
+</body>
+</html>
